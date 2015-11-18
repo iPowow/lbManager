@@ -1,0 +1,12 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/coreos/go-etcd/etcd",
+			"repository": "https://github.com/coreos/go-etcd",
+			"revision": "e7a55efcbf98ec66b314a8b93693fb9fd60f4483",
+			"branch": "HEAD",
+			"path": "/etcd"
+		}
+	]
+}

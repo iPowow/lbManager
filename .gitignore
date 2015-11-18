@@ -2,4 +2,6 @@
 *.swp
 *.lock
 *sublime*
-lbManager
+/pkg
+/bin
+/vendor/pkg
