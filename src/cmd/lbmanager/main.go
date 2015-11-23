@@ -15,7 +15,7 @@ var config struct {
 }
 
 func init() {
-	flag.StringVar(&config.etcdHost, "etcd-host", "http://localhost:4001", "Etcd service address")
+	flag.StringVar(&config.etcdHost, "etcd-host", "http://localhost:2379", "Etcd service address")
 	flag.StringVar(&config.etcdPath, "config-path", "/lbManager", "Configuration path")
 	flag.StringVar(&config.awsAccessKey, "aws-access-key", "", "AWS access key")
 	flag.StringVar(&config.awsSecretKey, "aws-secret-key", "", "AWS secret key")
@@ -31,9 +31,10 @@ func main() {
 
 	manager := &Manager{
 		configPath: config.etcdPath,
-		etcdClient: etcd.NewClient([]string{config.etcdHost}),
+		etcdClient: etcd.NewClient(strings.Split(config.etcdHost, ",")),
 		awsAuth:    awsAuth,
 	}
+
 	log.Println("Running load balancers manager...")
 	manager.Start()
 }
