@@ -2,11 +2,202 @@
 	"version": 0,
 	"dependencies": [
 		{
+			"importpath": "bitbucket.org/ipowow/updater",
+			"repository": "https://bitbucket.org/ipowow/updater",
+			"revision": "d7e4dfe6e277b4b5e9a8fab0d1b9e0b4477f5e4a",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/aquam8/mlab-ns2/gae/ns/digest",
+			"repository": "https://github.com/aquam8/mlab-ns2",
+			"revision": "280d172c10ded5145c73263c7afbc2fa48bb62c1",
+			"branch": "master",
+			"path": "/gae/ns/digest"
+		},
+		{
+			"importpath": "github.com/asaskevich/govalidator",
+			"repository": "https://github.com/asaskevich/govalidator",
+			"revision": "edd46cdac249b001c7b7d88c6d43993ea875e8d8",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/aws",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/aws"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/endpoints",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/endpoints"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/protocol/query",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/protocol/query"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/protocol/rest",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/protocol/rest"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/protocol/restxml",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/protocol/restxml"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/protocol/xml/xmlutil"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/signer/v4",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/signer/v4"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/private/waiter",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/private/waiter"
+		},
+		{
+			"importpath": "github.com/aws/aws-sdk-go/service/s3",
+			"repository": "https://github.com/aws/aws-sdk-go",
+			"revision": "328e030f73f66922cb9c1357de794ee1bf0ca2b5",
+			"branch": "master",
+			"path": "/service/s3"
+		},
+		{
+			"importpath": "github.com/bugsnag/osext",
+			"repository": "https://github.com/bugsnag/osext",
+			"revision": "0dd3f918b21bec95ace9dc86c7e70266cfc5c702",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/cenkalti/backoff",
+			"repository": "https://github.com/cenkalti/backoff",
+			"revision": "4dc77674aceaabba2c7e3da25d4c823edfb73f99",
+			"branch": "master"
+		},
+		{
 			"importpath": "github.com/coreos/go-etcd/etcd",
 			"repository": "https://github.com/coreos/go-etcd",
 			"revision": "003851be7bb0694fe3cc457a49529a19388ee7cf",
 			"branch": "master",
 			"path": "/etcd"
+		},
+		{
+			"importpath": "github.com/coreos/go-omaha/omaha",
+			"repository": "https://github.com/coreos/go-omaha",
+			"revision": "f26efba60fb7d1f8a526d64c2e1d6cfc09006d50",
+			"branch": "master",
+			"path": "/omaha"
+		},
+		{
+			"importpath": "github.com/coreos/go-semver/semver",
+			"repository": "https://github.com/coreos/go-semver",
+			"revision": "d043ae190b3202550d026daf009359bb5d761672",
+			"branch": "master",
+			"path": "/semver"
+		},
+		{
+			"importpath": "github.com/coreroller/coreroller/backend/src/api",
+			"repository": "https://github.com/coreroller/coreroller",
+			"revision": "68db2eb372c256c84387fa81bcb6afae4cc7e915",
+			"branch": "master",
+			"path": "/backend/src/api"
+		},
+		{
+			"importpath": "github.com/coreroller/coreroller/updaters/lib/go",
+			"repository": "https://github.com/coreroller/coreroller",
+			"revision": "68db2eb372c256c84387fa81bcb6afae4cc7e915",
+			"branch": "master",
+			"path": "/updaters/lib/go"
+		},
+		{
+			"importpath": "github.com/garyburd/redigo/internal",
+			"repository": "https://github.com/garyburd/redigo",
+			"revision": "6ece6e0a09f28cc399b21550cbf37ab39ba63cce",
+			"branch": "master",
+			"path": "/internal"
+		},
+		{
+			"importpath": "github.com/garyburd/redigo/redis",
+			"repository": "https://github.com/garyburd/redigo",
+			"revision": "6ece6e0a09f28cc399b21550cbf37ab39ba63cce",
+			"branch": "master",
+			"path": "/redis"
+		},
+		{
+			"importpath": "github.com/go-ini/ini",
+			"repository": "https://github.com/go-ini/ini",
+			"revision": "2e44421e256d82ebbf3d4d4fcabe8930b905eff3",
+			"branch": "v1"
+		},
+		{
+			"importpath": "github.com/jmespath/go-jmespath",
+			"repository": "https://github.com/jmespath/go-jmespath",
+			"revision": "3433f3ea46d9f8019119e7dd41274e112a2359a9",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/jmoiron/sqlx",
+			"repository": "https://github.com/jmoiron/sqlx",
+			"revision": "54aec3fd91a2b2129ffaca0d652b8a9223ee2d9e",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/lib/pq",
+			"repository": "https://github.com/lib/pq",
+			"revision": "83c4f410d0aed80a0f44bac6a576a7f2435791f3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/mattn/go-colorable",
+			"repository": "https://github.com/mattn/go-colorable",
+			"revision": "51a7e7a8b1665b25ca173debdc8d52d493348f15",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/mattn/go-isatty",
+			"repository": "https://github.com/mattn/go-isatty",
+			"revision": "d6aaa2f596ae91a0a58d8e7f2c79670991468e4f",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/mgutz/ansi",
+			"repository": "https://github.com/mgutz/ansi",
+			"revision": "c286dcecd19ff979eeb73ea444e479b903f2cfcb",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/mgutz/logxi/v1",
+			"repository": "https://github.com/mgutz/logxi",
+			"revision": "5e85ab8bfe3b2db5d199916ef190d3f940a3d5ca",
+			"branch": "master",
+			"path": "/v1"
+		},
+		{
+			"importpath": "github.com/mgutz/str",
+			"repository": "https://github.com/mgutz/str",
+			"revision": "968bf66e3da857419e4f6e71b2d5c9ae95682dc4",
+			"branch": "master"
 		},
 		{
 			"importpath": "github.com/mitchellh/goamz",
@@ -21,6 +212,24 @@
 			"branch": "master"
 		},
 		{
+			"importpath": "github.com/pmylund/go-cache",
+			"repository": "https://github.com/pmylund/go-cache",
+			"revision": "a122e14c4b8ee69022f62f24ba85cb36ce844366",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/rubenv/sql-migrate",
+			"repository": "https://github.com/rubenv/sql-migrate",
+			"revision": "53184e1edfb4f9655b0fa8dd2c23e7763f452bda",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/satori/go.uuid",
+			"repository": "https://github.com/satori/go.uuid",
+			"revision": "d41af8bb6a7704f00bc3b7cba9355ae6a5a80048",
+			"branch": "master"
+		},
+		{
 			"importpath": "github.com/ugorji/go/codec",
 			"repository": "https://github.com/ugorji/go",
 			"revision": "1fff025aa97624c052163fbf6fed886bac6e9535",
@@ -31,6 +240,18 @@
 			"importpath": "github.com/vaughan0/go-ini",
 			"repository": "https://github.com/vaughan0/go-ini",
 			"revision": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1",
+			"branch": "master"
+		},
+		{
+			"importpath": "gopkg.in/gorp.v1",
+			"repository": "https://gopkg.in/gorp.v1",
+			"revision": "c87af80f3cc5036b55b83d77171e156791085e2e",
+			"branch": "master"
+		},
+		{
+			"importpath": "gopkg.in/mgutz/dat.v1",
+			"repository": "https://gopkg.in/mgutz/dat.v1",
+			"revision": "1a548c71882f3597d93dc002382f6f1c983704af",
 			"branch": "master"
 		}
 	]

@@ -2,9 +2,16 @@ package main
 
 import (
 	"flag"
+	"log"
+	"os"
+	"os/signal"
+	"strings"
+	"syscall"
+	"time"
+
+	"bitbucket.org/ipowow/updater"
 	"github.com/coreos/go-etcd/etcd"
 	"github.com/mitchellh/goamz/aws"
-	"log"
 )
 
 var config struct {
@@ -24,6 +31,11 @@ func init() {
 func main() {
 	flag.Parse()
 
+	// Instantiates the CoreRoller updater to check periodically for version update.
+	if updater, err := updater.New(30*time.Second, syscall.SIGTERM); err == nil {
+		go updater.Start()
+	}
+
 	awsAuth, err := aws.GetAuth(config.awsAccessKey, config.awsSecretKey)
 	if err != nil {
 		log.Println(err)
@@ -36,5 +48,10 @@ func main() {
 	}
 
 	log.Println("Running load balancers manager...")
-	manager.Start()
+	go manager.Start()
+
+	// Wait for signal to terminate
+	signalsCh := make(chan os.Signal, 1)
+	signal.Notify(signalsCh, os.Interrupt, syscall.SIGTERM)
+	<-signalsCh
 }
