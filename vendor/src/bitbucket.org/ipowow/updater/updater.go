@@ -153,7 +153,7 @@ func (u *Updater) Start() {
 			logger.Debug("no update from CoreRoller")
 			continue
 		default:
-			logger.Error("Getting update from CoreRoller", "error", err.Error())
+			logger.Warn("Getting update from CoreRoller", "appID", u.a.AppID, "groupID", u.a.GroupID, "instanceID", u.a.InstanceID, "error", err.Error())
 			continue
 		}
 
