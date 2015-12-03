@@ -4,7 +4,7 @@
 		{
 			"importpath": "bitbucket.org/ipowow/updater",
 			"repository": "https://bitbucket.org/ipowow/updater",
-			"revision": "6c7634ff367435d1a0c2ca5c670b803cea7eda24",
+			"revision": "56da417079842dcfebea1a1023adb57e7c7dc1a8",
 			"branch": "master"
 		},
 		{
@@ -84,12 +84,6 @@
 			"path": "/service/s3"
 		},
 		{
-			"importpath": "github.com/bugsnag/osext",
-			"repository": "https://github.com/bugsnag/osext",
-			"revision": "0dd3f918b21bec95ace9dc86c7e70266cfc5c702",
-			"branch": "master"
-		},
-		{
 			"importpath": "github.com/cenkalti/backoff",
 			"repository": "https://github.com/cenkalti/backoff",
 			"revision": "4dc77674aceaabba2c7e3da25d4c823edfb73f99",
@@ -160,6 +154,12 @@
 			"importpath": "github.com/jmoiron/sqlx",
 			"repository": "https://github.com/jmoiron/sqlx",
 			"revision": "54aec3fd91a2b2129ffaca0d652b8a9223ee2d9e",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/kardianos/osext",
+			"repository": "https://github.com/kardianos/osext",
+			"revision": "10da29423eb9a6269092eebdc2be32209612d9d2",
 			"branch": "master"
 		},
 		{

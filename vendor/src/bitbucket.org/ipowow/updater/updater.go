@@ -2,20 +2,22 @@ package updater
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
 	"syscall"
 	"time"
 
-	"github.com/bugsnag/osext"
 	"github.com/coreos/go-semver/semver"
 	cr "github.com/coreroller/coreroller/updaters/lib/go"
+	"github.com/kardianos/osext"
 	"github.com/mgutz/logxi/v1"
 )
 
 const (
-	verSep = "_v"
+	verSep                      = "_v"
+	reportSuccessfulUpdateDelay = 10 * time.Second
 )
 
 var (
@@ -56,6 +58,8 @@ func New(checkFrequency time.Duration, signal syscall.Signal) (*Updater, error) 
 		signal:         signal,
 		a:              artifact,
 	}
+
+	time.AfterFunc(reportSuccessfulUpdateDelay, u.reportSuccessfulUpdate)
 
 	return u, nil
 }
@@ -181,17 +185,47 @@ func (u *Updater) processUpdate(update *cr.Update) error {
 	cr.EventDownloadFinished(u.a.InstanceID, u.a.AppID, u.a.GroupID)
 
 	logger.Info("installing update", "version", update.Version)
-
 	if err := u.a.Install(artifactPath); err != nil {
 		logger.Error("install update failed", "artifactPath", artifactPath)
 		return err
 	}
-
 	logger.Info("update installed", "version", update.Version)
-	cr.EventUpdateSucceeded(u.a.InstanceID, u.a.AppID, u.a.GroupID)
+
+	if err := u.trackInstalledUpdate(update); err != nil {
+		logger.Error("trackInstalledUpdate failed", "version", update.Version, "error", err)
+	}
 
 	logger.Info("sending signal to process now to restart..", "version", update.Version)
 	syscall.Kill(syscall.Getpid(), u.signal)
 
 	return nil
+}
+
+func (u *Updater) trackInstalledUpdate(update *cr.Update) error {
+	_, err := os.Create(u.getTrackFile(update.Version))
+
+	return err
+}
+
+func (u *Updater) reportSuccessfulUpdate() {
+	trackFile := u.getTrackFile(u.a.Version)
+
+	if _, err := os.Stat(trackFile); os.IsNotExist(err) {
+		return
+	}
+
+	if err := cr.EventUpdateSucceeded(u.a.InstanceID, u.a.AppID, u.a.GroupID); err != nil {
+		logger.Error("reportSuccessfulUpdate failed", "error", err)
+		return
+	}
+
+	logger.Info("update succesfully deployed", "version", u.a.Version)
+
+	if err := os.Remove(trackFile); err != nil {
+		logger.Error("Error removing tracking file", "version", u.a.Version, "error", err)
+	}
+}
+
+func (u *Updater) getTrackFile(version string) string {
+	return filepath.Join(os.Getenv("HOME"), fmt.Sprintf(".updater.%s.%s", u.a.ExecutablePrefix, version))
 }
